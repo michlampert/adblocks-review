@@ -1,12 +1,31 @@
 site_name: Przegląd blokerów reklam
 theme:
-  name: readthedocs
+  language: pl
+  name: material
+  # favicon: fontawesome/solid/ban
+  icon:
+    logo: material/advertisements-off
+  palette:
+    - scheme: default
+      primary: teal
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   highlightjs: true
+  features:
+    - navigation.sections
+    - navigation.indexes 
 plugins:
   - search
   - mkdocstrings:
       handlers:
-        # See: https://mkdocstrings.github.io/python/usage/
         python:
           options:
             docstring_style: sphinx
@@ -14,3 +33,36 @@ markdown_extensions:
   - markdown_include.include:
       base_path: .
   - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+nav:
+  - O projekcie:
+    - index: index.md
+  - Teoria:
+    - index: theory/index.md
+  - Rozwiązania:
+    # - index: browser/index.md
+    - Adblock Plus: browser/abp.md
+    - uBlock Origin: browser/ublock.md
+    - SponsorBlock: browser/sponsorblock.md
+    - DeArrow: browser/dearrow.md
+    - DuckDuckGo: browser/duckduckgo.md
+  # - Urządzenia mobilne:
+  #   - index: mobile/index.md
+  - Instalacja:
+    - index: installation/index.md
+    # - Przeglądarka: installation/browser.md
+    # - Urządzenia mobilne: installation/mobile.md
+  # - Jak kontrybuować?:
+  #   - index: how/index.md
+copyright: Copyright &copy; 2016 - 2020 Martin Donath
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: /
+    - icon: material/school
+      link: /
+  generator: false
+copyright: Stworzono na potrzeby Socjologii UJ
